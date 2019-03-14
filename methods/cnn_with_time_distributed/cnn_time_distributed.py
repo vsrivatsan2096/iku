@@ -177,8 +177,8 @@ class  CNNAndTimeDistributed(object):
         return model
 
 
-    def execute(self):
-        model = self.get_model()
+    def execute(self, modal_path):
+        model = self.get_model(modal_path)
 
         model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
