@@ -74,7 +74,7 @@ class  CNNAndTimeDistributed(object):
 
         return word_embedding_matrix
     
-    def get_model(self):
+    def get_model(self, modal_path):
 
         units = 128 # Number of nodes in the Dense layers
         dropout = 0.25 # Percentage of nodes to drop
@@ -84,7 +84,7 @@ class  CNNAndTimeDistributed(object):
         weights = initializers.TruncatedNormal(mean=0.0, stddev=0.05, seed=2)
         bias = bias_initializer='zeros'
 
-        word_embedding_matrix = self.get_embeddings('wiki')
+        word_embedding_matrix = self.get_embeddings(modal_path)
         nb_words = len(self.word_index)
 
         # CNN for sentences set 1
