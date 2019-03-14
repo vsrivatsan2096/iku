@@ -52,15 +52,7 @@ class  CNNAndTimeDistributed(object):
 
         return word_sequences_1, word_sequences_2
     
-    def get_embeddings(self, model_name):
-        model_path = None
-        if model_name == 'wiki':
-            model_path = 'E:\Models\pre_trained\glove\wiki\wiki.300d.txt'
-        elif model_name == 'common crawl':
-            model_path = "E:\Models\pre_trained\glove\commoncrawl\common_crawl.300d.txt"
-        else:
-            assert("Model does not exist")
-        
+    def get_embeddings(self, model_path):
         embeddings_index = {}
         with open(model_path, encoding='utf-8') as f:
             for line in f:
